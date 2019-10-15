@@ -1,3 +1,5 @@
+require 'octokit'
+
 puts "Hello from pull request generator"
 
 # Make a branch

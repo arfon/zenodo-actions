@@ -25,4 +25,6 @@ jobs:
       # Use a Ruby environment https://github.com/actions/setup-ruby
       - uses: actions/setup-ruby@v1
       - name: run open_pull_request.rb
-        run: ruby .github/workflows/open_pull_request.rb
+        run: |
+          gem install octokit
+          ruby .github/workflows/open_pull_request.rb

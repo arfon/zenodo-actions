@@ -12,3 +12,5 @@ detected = files_to_detect.select { |file| File.exists?(file) }
 
 # Fail the script if none of the desired files are detected
 fail unless detected.any?
+
+puts "Working with #{detected.first}"
