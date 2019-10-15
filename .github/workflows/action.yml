@@ -28,3 +28,6 @@ jobs:
         run: |
           gem install octokit
           ruby .github/workflows/open_pull_request.rb
+                with:
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

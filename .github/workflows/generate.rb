@@ -14,3 +14,5 @@ detected = files_to_detect.select { |file| File.exists?(file) }
 fail unless detected.any?
 
 puts "Working with #{detected.first}"
+
+`cp package.json codemeta.json`
