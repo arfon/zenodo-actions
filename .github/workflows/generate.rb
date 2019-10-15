@@ -18,7 +18,7 @@ fail unless detected.any?
 
 puts "Working with #{detected.first}"
 
-`cp package.json codemeta.json`
+`bolognese package.json -t codemeta > codemeta.json`
 
 def create_branch(branch_name)
   begin
