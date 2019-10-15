@@ -11,7 +11,7 @@ jobs:
       # Use a Ruby environment https://github.com/actions/setup-ruby
       - uses: actions/setup-ruby@v1
       # This step prints an output (time) from the previous step's action.
-      - name: Attempt to generate
+      - name: run generate.rb
         run: ruby generate.rb
   open_pull_request:
     needs: generate_code_meta
@@ -22,5 +22,5 @@ jobs:
       - uses: actions/checkout@master
       # Use a Ruby environment https://github.com/actions/setup-ruby
       - uses: actions/setup-ruby@v1
-      - name: Deposit...
+      - name: run open_pull_request.rb
         run: ruby open_pull_request.rb
