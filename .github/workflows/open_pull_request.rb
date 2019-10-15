@@ -39,5 +39,5 @@ short_sha = ENV['GITHUB_SHA'].slice(0,8)
 target_branch = "codemeta.json-#{short_sha}"
 
 create_branch(target_branch)
-create_codemeta_file(target_branch)
+create_codemeta_file(target_branch, short_sha)
 create_codemeta_pull_request(target_branch, short_sha)
