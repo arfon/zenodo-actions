@@ -1,1 +1,3 @@
-puts "Hello from generate.rb"
+require 'octokit'
+
+puts Octokit::VERSION
