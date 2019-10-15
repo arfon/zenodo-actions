@@ -15,6 +15,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gem install bolognese
+          gem install specific_install
+          gem specific_install https://github.com/datacite/bolognese.git
           gem install octokit
           ruby .github/workflows/generate.rb
