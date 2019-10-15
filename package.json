@@ -1,17 +1,18 @@
 {
-  "name": "Zenodo Actions Fun Time",
-  "description": "A demonstration of GitHub actions for FORCE2019",
-  "version": "0.1.0",
+  "name": "fullstack_app",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"sudo -i service elasticsearch start\" \"cd backend && node --max_old_space_size=8000 server.js\" \"cd client && npm start\""
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/arfon/zenodo-actions.git"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "request": "~2.30.0",
+    "concurrently": "^4.1.0",
+    "d3": "^5.9.2",
+    "monk": "^6.0.6"
   },
-  "license": "MIT",
-  "homepage": "http://example.com"
+  "devDependencies": {},
+  "description": ""
 }
