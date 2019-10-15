@@ -12,11 +12,11 @@ def create_branch(branch_name)
   end
 end
 
-def create_codemeta_file(branch_name)
+def create_codemeta_file(branch_name, short_sha)
   begin
     GITHUB.create_contents( ENV['GITHUB_REPOSITORY'],
                             "codemeta.json",
-                            "Creating codemeta.json at #{ENV['GITHUB_SHA']}",
+                            "Creating codemeta.json at #{short_sha}",
                             File.open("codemeta.json").read,
                             :branch => branch_name)
   rescue Octokit::UnprocessableEntity
@@ -24,11 +24,11 @@ def create_codemeta_file(branch_name)
   end
 end
 
-def create_codemeta_pull_request(branch_name)
+def create_codemeta_pull_request(branch_name, short_sha)
   begin
     GITHUB.create_pull_request( ENV['GITHUB_REPOSITORY'],
                                 "master", "#{branch_name}",
-                                "Creating pull request with codemeta.json file at #{ENV['GITHUB_SHA']}",
+                                "Creating pull request with codemeta.json file at #{short_sha}",
                                 "If this looks good then :shipit:")
   rescue Octokit::UnprocessableEntity
     fail "Something went wrong creating the pull request"
@@ -40,4 +40,4 @@ target_branch = "codemeta.json-#{short_sha}"
 
 create_branch(target_branch)
 create_codemeta_file(target_branch)
-create_codemeta_pull_request(target_branch)
+create_codemeta_pull_request(target_branch, short_sha)
