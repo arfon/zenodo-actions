@@ -24,9 +24,9 @@ jobs:
       - uses: actions/checkout@master
       # Use a Ruby environment https://github.com/actions/setup-ruby
       - uses: actions/setup-ruby@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: run open_pull_request.rb
         run: |
           gem install octokit
           ruby .github/workflows/open_pull_request.rb
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
