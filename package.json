@@ -1,0 +1,17 @@
+{
+  "name": "Zenodo Actions Fun Time",
+  "description": "A demonstration of GitHub actions for FORCE2019",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arfon/zenodo-actions.git"
+  },
+  "dependencies": {
+    "request": "~2.30.0",
+  },
+  "license": "MIT",
+  "homepage": "http://example.com"
+}
