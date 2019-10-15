@@ -14,7 +14,7 @@ jobs:
       - name: run generate.rb
         run: |
           gem install bolognese
-          ruby ./generate.rb
+          ruby .github/workflows/generate.rb
   open_pull_request:
     needs: generate_code_meta
     name: Open a pull request with the new codemeta.json file
@@ -25,4 +25,4 @@ jobs:
       # Use a Ruby environment https://github.com/actions/setup-ruby
       - uses: actions/setup-ruby@v1
       - name: run open_pull_request.rb
-        run: ruby open_pull_request.rb
+        run: ruby .github/workflows/open_pull_request.rb
