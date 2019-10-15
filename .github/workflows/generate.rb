@@ -4,7 +4,7 @@ puts "The repository is #{ENV['GITHUB_REPOSITORY']}"
 puts "The commit is #{ENV['GITHUB_SHA']}"
 
 files_to_detect = [
-  "filename"
+  "package.json"
 ]
 
 # See what files exist at the repository root
